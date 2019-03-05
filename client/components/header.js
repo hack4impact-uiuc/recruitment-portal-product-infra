@@ -1,5 +1,5 @@
 export default () => (
-    <header>
-      <h1>Next.js Example on Now 2.0</h1>
-    </header>
-  );
+  <header>
+    <h1> Hack4Impact Recruitment Portal </h1>
+  </header>
+);
