@@ -1,7 +1,4 @@
-// import { INPUT_VALUE } from '../constants'
-
 export default (state = {}, action) => {
-  console.log(action);
   switch (action.type) {
     case "INPUT_VALUE":
       return {

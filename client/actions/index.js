@@ -1,3 +1,5 @@
+import {INPUT_VALUE} from "./actionTypes"
+
 export const washPeach = () => {
   return {
     type: "WASH"
@@ -18,5 +20,5 @@ export const rotPeach = () => {
 };
 
 export const inputChange = (title, name, val) => {
-  return { type: "INPUT_VALUE", title, name, val };
+  return { type: INPUT_VALUE, title, name, val };
 };

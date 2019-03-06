@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Header from "../components/header";
-import PeachContainer from "../containers/peachContainer"
+import Peach from "../components/Peach"
 
 export default () => (
   <main>
     <Header />
-    <PeachContainer />
+    <Peach />
     <section>
       <Link href="/examples">
         <a>API examples page</a>
