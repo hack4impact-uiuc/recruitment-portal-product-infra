@@ -6,8 +6,8 @@ import { bindActionCreators } from "redux";
 // import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { inputChange } from "../actions";
-import Button from "./Button"
-import Input from "./Input"
+import Button from "./formComponents/Button";
+import Input from "./formComponents/Input";
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -35,52 +35,42 @@ class MyForm extends Component {
   };
 
   handleSubmit = event => {
-    this.props.inputChange(this.state.title, this.state.name, this.state.val)
-  }
+    this.props.inputChange(this.state.title, this.state.name, this.state.val);
+  };
 
   render() {
     return (
       <main>
         <Header />
         <form onSubmit={this.handleSubmit}>
-          {/* <label> */}
-            Title:
-            <input
-              type="text"
-              name={"title"}
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          {/* </label> */}
-          {/* <label> */}
-            Name:
-            <input
-              type="text"
-              name={"name"}
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            Val:
-            <Input
-              type="text"
-              name={"val"}
-              value={this.state.val}
-              onChange={this.handleChange}
-            />
+          <Input
+            title="Title   "
+            type="text"
+            name={"title"}
+            value={this.state.title}
+            onChange={this.handleChange}
+          />
+          <Input
+            title="Name"
+            type="text"
+            name={"name"}
+            value={this.state.name}
+            onChange={this.handleChange}
+          />
+
+          <Input
+            title="Value"
+            type="text"
+            name={"val"}
+            value={this.state.val}
+            onChange={this.handleChange}
+          />
         </form>
-        {/* <input type="submit" value="Submit" /> */}
-        <Button onClick={this.handleSubmit} name="submit"></Button>
-        {/* <ButtonContainer
-          title={this.state.title}
-          name={this.state.name}
-          val={this.state.val}
-        /> */}
+        <Button onClick={this.handleSubmit} name="submit" />
       </main>
     );
   }
 }
-
-// export default MyForm
 
 export default connect(
   mapStateToProps,

@@ -2,8 +2,6 @@ import { Component } from "react";
 import styled from "styled-components";
 import { bindActionCreators } from "redux";
 
-import { inputChange } from "../actions";
-
 const StyledButton = styled.button`
   /* Adapt the colors based on primary prop */
   background: ${props => (props.primary ? "#0c894c" : "white")};
