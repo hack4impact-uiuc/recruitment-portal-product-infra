@@ -1,12 +1,13 @@
 import { Component } from "react";
 import Link from "next/link";
 import Header from "./header";
-import ButtonContainer from "../containers/buttonContainer";
 import { Form, Text } from "informed";
 import { bindActionCreators } from "redux";
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { inputChange } from "./../actions";
+import { inputChange } from "../actions";
+import Button from "./Button"
+import Input from "./Input"
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -34,9 +35,7 @@ class MyForm extends Component {
   };
 
   handleSubmit = event => {
-    console.log("submit")
     this.props.inputChange(this.state.title, this.state.name, this.state.val)
-    console.log(this.props.state)
   }
 
   render() {
@@ -62,7 +61,7 @@ class MyForm extends Component {
               onChange={this.handleChange}
             />
             Val:
-            <input
+            <Input
               type="text"
               name={"val"}
               value={this.state.val}
@@ -70,7 +69,7 @@ class MyForm extends Component {
             />
         </form>
         {/* <input type="submit" value="Submit" /> */}
-        <Button onClick={this.handleSubmit}>Submit2 </Button>
+        <Button onClick={this.handleSubmit} name="submit"></Button>
         {/* <ButtonContainer
           title={this.state.title}
           name={this.state.name}
